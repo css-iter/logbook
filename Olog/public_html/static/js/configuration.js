@@ -17,11 +17,11 @@ var serviceurl = window.location.protocol + "//" + window.location.host + "/Olog
 
 // For all the dates shown in client
 // Format docs can be found at http://momentjs.com/docs/#/displaying/format/
-var dateFormat = "M/D/YY, h:mm A";
+var dateFormat = "YYYY-MM-DDThh:mm:ssZ";
 
 // jQuery datepicker plugin has its onw date format so it is defined separately.
 // Format switches can be found at http://api.jqueryui.com/datepicker/
-var datePickerDateFormat = "mm/dd/yy";
+var datePickerDateFormat = "yy-mm-dd";
 
 // jQuery timepicker plugin has its onw date format so it is defined separately.
 // Format switches can be found at http://trentrichardson.com/examples/timepicker/
@@ -30,7 +30,7 @@ var datePickerTimeFormat = "hh:mm";
 // Date from the datepicker is put in the search input but need to be parsed
 // to build a REST service query. Format documentation can be found at
 // http://momentjs.com/docs/#/parsing/
-var datePickerDateFormatMometParseString = "MM/DD/YYYY hh:mm";
+var datePickerDateFormatMometParseString = "YYYY-MM-DDThh:mm";
 
 // Start of the week in the jQuery datepicker: 0: Sunday, 1: Monday, ...
 var datePickerFirstName = 1;
@@ -46,9 +46,6 @@ var sessionCookieName = "SESSION";
 
 // Write logs to console
 var writeLogs = true;
-
-// First page name
-var firstPageName = "index.html";
 
 // Search key map. Function will extract value from search input, try to find
 // keyMap keys in it and it will generate search query by replacing keyMap keys

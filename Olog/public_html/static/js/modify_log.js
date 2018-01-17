@@ -157,10 +157,8 @@ $(document).ready(function(){
 			$('#level_input').append(html);
 		});
 
-		//set the date for the datetimepicker to set eventStart Date
-        var date = new Date(
-                log[0].eventStart
-        );
+		
+        var date = new Date();
 
         $('#startdate_input').datetimepicker('setDate', date);
 
