@@ -312,7 +312,10 @@ function showLog(log, id){
     //Then set the log event start date
     template = getTemplate("template_log_details_startdate");
 
-    
+    item = {
+        eventStartDate: formatDate(log.eventStart)
+    };
+
     html = Mustache.to_html(template, item);
 
     $('#log_details_startdate').html(html);
@@ -577,6 +580,7 @@ function prepareParentAndChildren(i, children, prepend, logOwners) {
 		modifiedDate: formatDate(item.modifiedDate),
 		modified: false,
 		startdate: true,
+		eventStart: formatDate(item.eventStart),
 		id: item.id + '_' + item.version,
 		rawId: item.id,
 		attachments : [],
@@ -949,7 +953,8 @@ function generateLogObject() {
 		"tags":[],
 		"properties":[],
 		"attachments":[],
-		"level":""
+		"level":"",
+		"eventStart":""
 	}];
 
 	// Set description
@@ -1029,6 +1034,16 @@ function generateLogObject() {
 
 	// Set Level
 	log[0].level = $('#level_input').find(":selected").val();
+
+	var startDateInput = $('#startdate_input');
+
+	if(startDateInput.length > 0){
+		//input only present on the edit page
+		var dateVal = startDateInput.val();
+		if(dateVal){
+            log[0].eventStart = new Date(startDateInput.val()).toISOString();
+        }
+    }
 
 	return log;
 }
