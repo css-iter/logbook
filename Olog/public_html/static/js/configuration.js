@@ -47,9 +47,6 @@ var sessionCookieName = "SESSION";
 // Write logs to console
 var writeLogs = true;
 
-// First page name
-var firstPageName = "index.html";
-
 // Search key map. Function will extract value from search input, try to find
 // keyMap keys in it and it will generate search query by replacing keyMap keys
 // with keyMap values.
