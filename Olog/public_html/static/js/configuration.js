@@ -17,7 +17,8 @@ var serviceurl = window.location.protocol + "//" + window.location.host + "/Olog
 
 // For all the dates shown in client
 // Format docs can be found at http://momentjs.com/docs/#/displaying/format/
-var dateFormat = "YYYY-MM-DDThh:mm:ssZ";
+// With an empty dateFormat it will show UTC times with an ending 'Z'
+var dateFormat = "";
 
 // jQuery datepicker plugin has its onw date format so it is defined separately.
 // Format switches can be found at http://api.jqueryui.com/datepicker/
